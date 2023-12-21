@@ -16,6 +16,7 @@ catalog:      true
 lang: vi
 tags:
     - markdown
+    - C#
 ---
 
 <!-- VietNamese Version -->
