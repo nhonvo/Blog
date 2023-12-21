@@ -1,0 +1,9 @@
+Tiếng việt
+
+<iframe 
+  id="chart"
+  src="https://huangxuan.me/PL-chart/"
+  frameborder="0" 
+  scrolling="no" 
+  style="width: 100%">
+</iframe>
