@@ -13,10 +13,9 @@ author:     "Truong Nhon"
 # header-mask: 0.4
 multilingual: true
 catalog:      true
-lang: vi
+lang: en
 tags:
     - markdown
-    - C#
 ---
 
 <!-- VietNamese Version -->
