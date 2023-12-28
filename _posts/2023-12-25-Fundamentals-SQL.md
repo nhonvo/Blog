@@ -64,7 +64,7 @@ tags:
    - In-depth exploration of DDL, with a specific focus on creating, modifying, and dropping databases.
    - Practical demonstrations illustrating the creation, alteration, and removal of databases, ensuring hands-on learning.
 3. **SQL Data Types**
-   - A detailed breakdown of SQL data types, covering NULL values, exact numbers, float, real, decimal, numeric, money, character strings, Unicode character strings, binary strings, and datetime data types.
+   - A detailed breakdown of SQL data types, covering <u>NULL values, exact numbers, float, real, decimal, numeric, money, character strings, Unicode character strings, binary strings, and datetime data types.</u>
    - Real-world examples and considerations for each data type, empowering a comprehensive grasp of their applications.
 4. **Tables and Constraints**
    - A practical guide to creating tables enriched with constraints, such as PRIMARY KEY, FOREIGN KEY, UNIQUE, DEFAULT, NOT NULL, and CHECK constraints.
