@@ -80,3 +80,10 @@ docker info                     // Display system-wide information
 docker version                  // Show the Docker version
 docker system prune             // Remove all stopped containers, unused networks, and dangling images
 ```
+
+## Dockerize Applications
+
+```
+docker build -t <image_name> .         // Build a Docker image
+docker run -p <host_port>:<container_port> <image_name>   // Run a Docker container
+```
