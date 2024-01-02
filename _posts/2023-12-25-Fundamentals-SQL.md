@@ -75,8 +75,7 @@ tags:
 6. **SQL Process and Conventions**
 
    - A thorough understanding of the SQL process, accompanied by adherence to conventions for writing SQL statements.
-
-   <img src="https://raw.githubusercontent.com/nhonvo/nhonvo.github.io/master/_posts/2023-12-25-Fundamentals-and-CRUD-Operations.assets/image-20231225151442556.png" alt="image-20231225151442556" style="zoom:67%;" />
+![img](/img/2023-12-25-Fundamentals-and-CRUD-Operations.assets/image-20231225151442556.png)
 
    - Best practices for naming conventions, key word prefixes, and other considerations, elevating the quality and readability of SQL code.
 

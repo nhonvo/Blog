@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Phonemic Chart html"
+title:      "Phonemic Chart"
 subtitle:   "Listen to the sounds of English"
 date:       2024-1-2 12:00:00
 author:     "Truong Nhon"
@@ -11,6 +11,7 @@ hidden: false
 # header-img-credit-href: "medium.com/@WebdesignerDepot/poll-should-css-become-more-like-a-programming-language-c74eb26a4270"
 # header-mask: 0.4
 published: true
+header-style: text
 multilingual: false
 catalog: false
 lang: en
@@ -423,4 +424,3 @@ tags:
             yes.play();
         }
     </script>
-
