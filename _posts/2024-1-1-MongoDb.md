@@ -15,8 +15,7 @@ multilingual: false
 catalog:      true
 lang: en
 tags:
-- mongo
-
+  - mongo
 ---
 
 
