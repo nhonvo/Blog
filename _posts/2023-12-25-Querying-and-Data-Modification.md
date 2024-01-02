@@ -15,7 +15,7 @@ multilingual: false
 catalog:      true
 lang: en
 tags:
-- markdown
+- sql
 ---
 
 ## **Data Manipulation Language (DML) Operations:**

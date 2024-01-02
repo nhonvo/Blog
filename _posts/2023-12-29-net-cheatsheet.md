@@ -15,9 +15,8 @@ multilingual: false
 catalog:      true
 lang: en
 tags:
-- dotnet
 - c#
-- command
+- cheatsheat
 
 ---
 

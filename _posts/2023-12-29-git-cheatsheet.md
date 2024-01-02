@@ -16,7 +16,7 @@ catalog:      true
 lang: en
 tags:
 - git
-- command
+- cheatsheat
 
 ---
 
