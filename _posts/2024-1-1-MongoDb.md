@@ -263,10 +263,10 @@ Ensure the security of your MongoDB instance by understanding the importance of 
 In conclusion, MongoDB offers a robust and flexible database solution with a wide range of features for efficient data management and querying. Understanding the various concepts and best practices will empower you to make the most out of MongoDB in your projects. Happy coding!
 
 
-<img src="https://github.com/nhonvo/nhonvo.github.io/tree/master/_posts/2024-1-1-MongoDb.assets/image-20240101150106403.png" alt="image-20240101150106403" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/nhonvo/nhonvo.github.io/master/_posts/2024-1-1-MongoDb.assets/image-20240101150106403.png" alt="image-20240101150106403" style="zoom:80%;" />
 
-<img src="https://github.com/nhonvo/nhonvo.github.io/tree/master/_posts/2024-1-1-MongoDb.assets/image-20240101150201886.png" alt="image-20240101150106403" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/nhonvo/nhonvo.github.io/master/_posts/2024-1-1-MongoDb.assets/image-20240101150201886.png" alt="image-20240101150106403" style="zoom:80%;" />
 
-<img src="https://github.com/nhonvo/nhonvo.github.io/tree/master/_posts/2024-1-1-MongoDb.assets/image-20240101150221176.png" alt="image-20240101150221176" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/nhonvo/nhonvo.github.io/master/_posts/2024-1-1-MongoDb.assets/image-20240101150221176.png" alt="image-20240101150221176" style="zoom:80%;" />
 
-<img src="https://github.com/nhonvo/nhonvo.github.io/tree/master/_posts/2024-1-1-MongoDb.assets/image-20240101150301552.png" alt="image-20240101150301552" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/nhonvo/nhonvo.github.io/master/_posts/2024-1-1-MongoDb.assets/image-20240101150301552.png" alt="image-20240101150301552" style="zoom:80%;" />
