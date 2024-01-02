@@ -26,7 +26,7 @@ tags:
 
 Gitflow is a branching model built around Git, defining a structured approach to managing branches for different purposes in larger projects. It consists of several key branches: `master`, `develop`, `feature`, `release`, and `hotfix`.
 
-More information [Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+More information: [Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 <img src="https://www.janbasktraining.com/community/uploads/b20ec99acd8ebafa76cf8d926540fea5.png" alt="Would you be able to clarify the Gitflow process? - Learn & Grow with ..." style="zoom:50%;" />
 

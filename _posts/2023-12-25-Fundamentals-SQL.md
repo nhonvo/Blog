@@ -216,8 +216,3 @@ tags:
 
 - Retrieve a list of all databases in the master.sys.databases table.
 - Example: `SELECT name FROM master.sys.databases`
-
-# Conclusion
-
-
-

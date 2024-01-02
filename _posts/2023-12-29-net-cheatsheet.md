@@ -23,6 +23,16 @@ tags:
 
 # NET Cheatsheet
 
+1. c# basic(datatype, exception, ...) -> *important*
+2. Algorithm (bubble sort, selected sort, ...) -> *quick view*
+3. OOP (4 ) **-> *important***
+4. SOLID (5)  -> *quick view*
+5. C# advance (delegate, generic, async ) -> *optional*
+6. SQL(join(8), understand func vs store procedure) **-> *important***
+7. Linq  -> *quick view*
+8. ef core  -> *quick view*
+9. webapi -> *optional*
+
 ## Create and Build Projects
 
 ```bash
