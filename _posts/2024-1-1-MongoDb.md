@@ -5,13 +5,7 @@ subtitle:   "Are you ready to dive into the world of MongoDB and its powerful sh
 date:       2024-1-1 12:00:00
 author:     "Truong Nhon"
 hidden: false
-# header-img: "img/post-bg-apple-event-2015.jpg"
-# header-style: text
-# header-img-credit: "@WebdesignerDepot"
-# header-img-credit-href: "medium.com/@WebdesignerDepot/poll-should-css-become-more-like-a-programming-language-c74eb26a4270"
 published: true
-# header-mask: 0.4
-multilingual: false
 catalog:      true
 lang: en
 tags:

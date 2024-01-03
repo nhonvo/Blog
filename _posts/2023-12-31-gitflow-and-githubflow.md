@@ -5,12 +5,7 @@ subtitle:   "compare gitflow and github flow"
 date:       2023-12-31 12:00:00
 author:     "Truong Nhon"
 hidden: false
-# header-img: "img/post-bg-apple-event-2015.jpg"
-# header-style: text
-# header-img-credit: "@WebdesignerDepot"
-# header-img-credit-href: "medium.com/@WebdesignerDepot/poll-should-css-become-more-like-a-programming-language-c74eb26a4270"
 published: true
-# header-mask: 0.4
 multilingual: false
 catalog:      true
 lang: en
