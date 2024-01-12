@@ -2,7 +2,7 @@
 layout:     post
 title:      "Mongo recap day 1"
 subtitle:   "Journey to master mongo"
-date:       2024-1-1 12:00:00
+date:       2024-1-4 12:00:00
 author:     "Truong Nhon"
 hidden: false
 published: true

@@ -2,7 +2,7 @@
 layout:     post
 title:      "Chinese movie"
 subtitle:   "List movie"
-date:       2024-1-1 12:00:00
+date:       2024-1-7 12:00:00
 author:     "Truong Nhon"
 hidden: false
 published: false
