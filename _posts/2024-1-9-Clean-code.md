@@ -2,7 +2,7 @@
 layout:     post
 title:      "Clean Code concepts adapted for .NET/.NET Core"
 subtitle:   ""
-date:       2023-12-29 12:00:00
+date:       2023-1-9 12:00:00
 author:     "Truong Nhon"
 hidden: false
 published: true

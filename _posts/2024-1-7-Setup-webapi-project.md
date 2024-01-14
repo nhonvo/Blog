@@ -2,7 +2,7 @@
 layout:     post
 title:      "Setup up webapi project by c#"
 subtitle:   "WebAPI"
-date:       2023-12-29 12:00:00
+date:       2023-1-7 12:00:00
 author:     "Truong Nhon"
 hidden: false
 published: true
