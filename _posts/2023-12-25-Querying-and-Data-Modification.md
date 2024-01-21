@@ -16,6 +16,7 @@ catalog:      true
 lang: en
 tags:
 - sql
+- query
 ---
 
 ## **Data Manipulation Language (DML) Operations:**

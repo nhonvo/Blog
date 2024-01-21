@@ -16,6 +16,9 @@ catalog:      true
 lang: en
 tags:
 - sql
+- advance
+- join
+- subqueries
 
 ---
 
