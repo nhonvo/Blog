@@ -19,14 +19,14 @@ tags:
 - compass, shell, database tool 
 
 ```
-atlas: username: mongo password: 123
+atlas: username: truongnhon password: rVSBsr-X3R2e3XW
 ```
 
 - connect to atlas
 
-  - compass: `mongodb+srv://mongo:<password>@mongo.kh3ovey.mongodb.net/`
+  - compass: `mongodb+srv://truongnhon:rVSBsr-X3R2e3XW@mongo.kh3ovey.mongodb.net/`
 
-  - shell: `mongosh "mongodb+srv://mongo.kh3ovey.mongodb.net/" --apiVersion 1 --username mongo`
+  - shell: `mongosh "mongodb+srv://sandbox.bvniwju.mongodb.net/" --apiVersion 1 --username truongnhon`
 
 
 - basic command
@@ -42,7 +42,25 @@ atlas: username: mongo password: 123
 
   - `db.<collection_name>.find()` : find
 
-## Find
+## MongoDB Data Types
+
+### BSON Types
+
+- Double: doesn’t have Float in MongoDB
+- String
+- Object
+- 32-Integer
+- 64-Integer
+- ObjectId
+- Boolean
+- Date
+- Timestamp
+- Decimal128
+- Array
+
+## Query
+
+### Find
 
 - db.collection.findOne(query,projection)
   - eg: `db.grades.findOne({"class":"abc"})`
@@ -52,7 +70,7 @@ atlas: username: mongo password: 123
   - eg: `db.grades.find("class":"abc")`
 
 
-## $
+### $
 
 - Comparison: The following operators can be used in queries to compare values: `{field:{operator:value}}`
   - $eq: Values are equal
@@ -80,16 +98,32 @@ Evaluation: The following operators assist in evaluating documents.
 - $text: Performs a text search
 - $where: Uses a JavaScript expression to match documents
 
-## $expr: `$expr: {operator:[field, value]}` 
+### $expr: `$expr: {operator:[field, value]}` 
 
 - operator: This is likely to be a comparison or logical operator used to perform a specific operation on the given field and value. Common operators include equality (==), inequality (!=), greater than (>), less than (<), etc. 
 - field: Refers to the attribute or property that you want to apply the operator to. It could be a column name in a database, a key in a JSON object, or a field in a data structure. 
-- value: Represents the value that you want to compare against the field using the specified operator. Eg: `{$expr:{$gt: ["$price",400]}}` 
+- value: Represents the value that you want to compare against the field using the specified operator. 
 
-## Element operator 
+```js
+db.trips.find({$expr:{$gt: ["$price",400]}})
+```
 
-- $exists: `db.collection.find({field:{$exists:<boolean>}})` 
-- $type: `db.collection.find({field:{$type:<BSONtype>}})` and `db.collection.find({field:{$type:[<BSONtype1>,<BSONtype2>,...]}})`-
+
+
+### Element operator 
+
+- `$exists`: returns documents that contain the specified field `db.collection.find({field:{$exists:<boolean>}})` 
+- `$type`: returns fields contain values of a specific data type `db.collection.find({field:{$type:<BSONtype>}})` and `db.collection.find({field:{$type:[<BSONtype1>,<BSONtype2>,...]}})`
+
+```js
+// exist
+db.trips.find({"name":{$exist:true}})
+
+// type
+db.routes.find({"airplane":{$type:"int"}})
+```
+
+
 
 ## Cursor
 
@@ -108,7 +142,7 @@ Evaluation: The following operators assist in evaluating documents.
    - Syntax: `db.collection.find({query}).skip(number)`
    - This command is used to skip a specified number of documents and return the remaining documents in the result set.
 
-```bash
+```javascript
 // Count documents that match a query
 db.collection.find({ field: value }).count();
 
@@ -120,7 +154,7 @@ db.collection.find({}).sort({ fieldName: -1 }).limit(10).skip(5);
 
 Specify which fields should be included or excluded from the result set. `db.collection.find({ query }, { projection })`.
 
-```bash
+```javascript
 // Find documents where "status" is "active", include "name" and "age" fields, exclude "_id" field
 db.collection.find({ status: "active" }, { name: 1, age: 1, _id: 0 })
 ```
