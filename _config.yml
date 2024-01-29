@@ -69,8 +69,8 @@ netease_comment: true
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: "G-2393JJ51HX" # Format: UA-xxxxxx-xx
-ga_domain: nhonvo.github.io
+ga_track_id: "" # Format: UA-xxxxxx-xx
+ga_domain: 
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
