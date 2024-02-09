@@ -13,10 +13,9 @@ tags:
 - sql
 - sqlserver
 ---
-
 ## Data normalization
 
-Which data denormalized:
+Which data de-normalized:
 
 - Inconsistent data types
 - Repeating columns
@@ -56,7 +55,7 @@ Eg:
 
 **Partial dependency**: a column that isn't part of the primary key, and that depends only on part of the primary key. For example, if the primary key (PK) is `(student_no, course_id)`, then a column called `student_name` would be a partial dependency on the PK because it only depends on the `student_no`.
 
-![The tables in the video, before and after converting from First Normal Form to Second Normal Form.](Design%20database.assets/2nf-before-after.png)
+![img](/img/Design-database/2nf-before-after.png)
 
 In the example, I noted `item_name` and `variant_name` as partial dependencies, relying on `item_no` and `variant_code`, respectively. As such, I split these two partial dependencies into their own tables, avoiding quite a bit of data duplication.
 
@@ -69,13 +68,13 @@ From there, the newly named `item_id` and `variant_id` (replacing `item_no` and 
 
 **Transitive dependency**: when a column that isn't part of the primary key depends on the primary key, but through another non-key column. For example, a table of movie reviews would have a surrogate id column as its PK, and a `movie_id` column to refer to the movfacie which is being reviewed. If the table also contains a `movie_name` column, then that `movie_name` is transitively dependent on the PK, because it depends on it *through* `movie_id`.
 
-![The tables in the video, before and after converting from Second Normal Form to Third Normal Form.](Design%20database.assets/3nf-before-after.png)
+![img](/img/Design-database/3nf-before-after.png)
 
 To eliminate transitive dependencies, we'll use a strategy similar to that of eliminating partial dependencies: remove the concerned columns, and, if a table linking those columns to the one they depend on doesn't exist, create it. Keeping with the movie reviews example above, this would mean creating a table for movies, with an `id` and a `movie_name`, and only keeping the `movie_id` column in the reviews table.
 
 ### Summary
 
-- Denormalized data contains repetitions that can cause anomalies
+- De-normalized data contains repetitions that can cause anomalies
 - Rules exist to normalize data
 - First Normal Form:
   - Single-valued columns
