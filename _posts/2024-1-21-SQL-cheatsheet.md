@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "SQL FOR EVERYONE "
-subtitle:   "THE DEFINITIVE GUIDE "
+title:      "SQL FOR EVERYONE - THE DEFINITIVE GUIDE"
+subtitle:   "SQL Essentials Part 4"
 date:       2024-1-21 12:00:00
 author:     "Truong Nhon"
 hidden: false

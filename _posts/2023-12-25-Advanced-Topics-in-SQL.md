@@ -2,7 +2,7 @@
 layout:     post
 title:      "Advanced topic in SQL"
 subtitle:   "SQL Essentials Part 3"
-date:       2023-12-25 12:00:00
+date:       2023-12-25 15:00:00
 author:     "Truong Nhon"
 # hidden: true
 # header-img: "img/post-bg-apple-event-2015.jpg"

@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      "Design database"
-subtitle:   ""
-date:       2024-1-21 12:00:00
+subtitle:   "SQL Essentials Part 5"
+date:       2024-2-6 17:00:00
 author:     "Truong Nhon"
 hidden: false
 published: true
@@ -86,19 +86,19 @@ To eliminate transitive dependencies, we'll use a strategy similar to that of el
 - Third Normal Form: No transitive dependencies
 - Sometimes, it's OK to violate normal forms; use your best judgement
 
-| **Key Term**             | **Definition**                                               |
-| ------------------------ | ------------------------------------------------------------ |
-| First Normal Form (1NF)  | Shaping data to eliminate inconsistencies, and allowing unique identification of each row |
-| Second Normal Form (2NF) | Extends 1NF by removing partial dependencies                 |
-| Third Normal Form (3NF)  | Extends 2NF by removing transitive dependencies              |
-| One-One Relationship     | When one entity "has one" of another entity, and that second entity "belongs to" only the first. For example, entity "user" and "home address" have a one-one relationship |
+| **Key Term**             | **Definition**                                                                                                                                                                                                                                                               |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| First Normal Form (1NF)  | Shaping data to eliminate inconsistencies, and allowing unique identification of each row                                                                                                                                                                                    |
+| Second Normal Form (2NF) | Extends 1NF by removing partial dependencies                                                                                                                                                                                                                                 |
+| Third Normal Form (3NF)  | Extends 2NF by removing transitive dependencies                                                                                                                                                                                                                              |
+| One-One Relationship     | When one entity "has one" of another entity, and that second entity "belongs to" only the first. For example, entity "user" and "home address" have a one-one relationship                                                                                                   |
 | One-Many Relationship    | When one entity "has many" of another entity, and that second entity "belongs to" only the first. For example, entity "user" and "email address" have a one-many relationship, because a user can have many email addresses, but each email address belongs to only one user |
-| Many-Many Relationship   | When two entities are related in such a way where many links can exist on both sides. For example, entities "books" and "categories" have a many-many relationship, because a book can have multiple categories, and a category can belong to multiple books |
-| Candidate Key            | A set of one or more columns that can uniquely identify a row in a database table |
-| Primary Key              | The key from the set of candidate keys that we actually choose in order to uniquely identify a row in that table |
-| Composite Key            | A key that is composed of more than one column               |
-| Partial Dependency       | When a non-key column depends on only part of the primary key |
-| Transitive Dependency    | When a non-key column depends on the primary key through another non-key column |
+| Many-Many Relationship   | When two entities are related in such a way where many links can exist on both sides. For example, entities "books" and "categories" have a many-many relationship, because a book can have multiple categories, and a category can belong to multiple books                 |
+| Candidate Key            | A set of one or more columns that can uniquely identify a row in a database table                                                                                                                                                                                            |
+| Primary Key              | The key from the set of candidate keys that we actually choose in order to uniquely identify a row in that table                                                                                                                                                             |
+| Composite Key            | A key that is composed of more than one column                                                                                                                                                                                                                               |
+| Partial Dependency       | When a non-key column depends on only part of the primary key                                                                                                                                                                                                                |
+| Transitive Dependency    | When a non-key column depends on the primary key through another non-key column                                                                                                                                                                                              |
 
 ## DDL
 
