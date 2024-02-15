@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Exploring MongoDB and mongosh in Bash"
-subtitle:   "Are you ready to dive into the world of MongoDB and its powerful shell, mongosh? Let's begin our journey by learning how to install mongosh."
+title:      "Exploring MongoDB and mongosh in Bash - Senior note"
+subtitle:   "part 1"
 date:       2024-1-1 12:00:00
 author:     "Truong Nhon"
 hidden: false
@@ -12,6 +12,7 @@ tags:
   - mongo
 ---
 
+Are you ready to dive into the world of MongoDB and its powerful shell, mongosh? Let's begin our journey by learning how to install mongosh.
 
 ## MongoDB Node.js Driver - Connection String Options
 

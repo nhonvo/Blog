@@ -42,8 +42,8 @@ Hangfire operates on a workflow that involves the following key components:
    - Jobs are only removed from the queue after successful processing.
    - Hangfire includes compensation logic to guarantee the processing of each job.
 
-
 `BackgroundJob.Enqueue(() => Console.WriteLine("Hello, world!"))`
+
 ```mermaid
 graph TD
 

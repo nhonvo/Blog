@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Mongo note"
-subtitle:   "Journey to master mongo"
+title:      "Mongo note - udemy note"
+subtitle:   "part 2"
 date:       2024-1-4 12:00:00
 author:     "Truong Nhon"
 hidden: false
@@ -12,13 +12,11 @@ tags:
   - mongo
 ---
 
-# Mongo Note
-
 ## Installation
 
-- compass, shell, database tool 
+- compass, shell, database tool
 
-```
+```bash
 atlas: username: truongnhon password: rVSBsr-X3R2e3XW
 ```
 
@@ -28,17 +26,15 @@ atlas: username: truongnhon password: rVSBsr-X3R2e3XW
 
   - shell: `mongosh "mongodb+srv://sandbox.bvniwju.mongodb.net/" --apiVersion 1 --username truongnhon`
 
-
 - basic command
 
   - `show dbs` : list down all database
 
-  - `use <database_name>` : switch database 
+  - `use <database_name>` : switch database
 
   - `show collections`
 
   - `db.<collection_name>.findOne()` : get first record
-
 
   - `db.<collection_name>.find()` : find
 
@@ -69,7 +65,6 @@ atlas: username: truongnhon password: rVSBsr-X3R2e3XW
 - db.collection.find(query,projection)
   - eg: `db.grades.find("class":"abc")`
 
-
 ### $
 
 - Comparison: The following operators can be used in queries to compare values: `{field:{operator:value}}`
@@ -98,21 +93,19 @@ Evaluation: The following operators assist in evaluating documents.
 - $text: Performs a text search
 - $where: Uses a JavaScript expression to match documents
 
-### $expr: `$expr: {operator:[field, value]}` 
+### $expr: `$expr: {operator:[field, value]}`
 
-- operator: This is likely to be a comparison or logical operator used to perform a specific operation on the given field and value. Common operators include equality (==), inequality (!=), greater than (>), less than (<), etc. 
-- field: Refers to the attribute or property that you want to apply the operator to. It could be a column name in a database, a key in a JSON object, or a field in a data structure. 
-- value: Represents the value that you want to compare against the field using the specified operator. 
+- operator: This is likely to be a comparison or logical operator used to perform a specific operation on the given field and value. Common operators include equality (==), inequality (!=), greater than (>), less than (<), etc.
+- field: Refers to the attribute or property that you want to apply the operator to. It could be a column name in a database, a key in a JSON object, or a field in a data structure.
+- value: Represents the value that you want to compare against the field using the specified operator.
 
 ```js
 db.trips.find({$expr:{$gt: ["$price",400]}})
 ```
 
+### Element operator
 
-
-### Element operator 
-
-- `$exists`: returns documents that contain the specified field `db.collection.find({field:{$exists:<boolean>}})` 
+- `$exists`: returns documents that contain the specified field `db.collection.find({field:{$exists:<boolean>}})`
 - `$type`: returns fields contain values of a specific data type `db.collection.find({field:{$type:<BSONtype>}})` and `db.collection.find({field:{$type:[<BSONtype1>,<BSONtype2>,...]}})`
 
 ```js
@@ -122,8 +115,6 @@ db.trips.find({"name":{$exist:true}})
 // type
 db.routes.find({"airplane":{$type:"int"}})
 ```
-
-
 
 ## Cursor
 
@@ -160,6 +151,3 @@ db.collection.find({ status: "active" }, { name: 1, age: 1, _id: 0 })
 ```
 
 ## Query array
-
-
-
