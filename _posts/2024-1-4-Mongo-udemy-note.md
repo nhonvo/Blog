@@ -8,8 +8,9 @@ hidden: false
 published: true
 catalog: true
 lang: en
+hidden: true
 tags:
-  - mongo
+  - mongogb
 ---
 
 ## Installation

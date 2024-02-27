@@ -9,7 +9,7 @@ published: true
 catalog:      true
 lang: en
 tags:
-  - mongo
+  - mongodb
 ---
 
 Are you ready to dive into the world of MongoDB and its powerful shell, mongosh? Let's begin our journey by learning how to install mongosh.
@@ -38,42 +38,66 @@ MongoDB uses BSON types to represent data. Here are some key BSON types:
 - Decimal128
 - Array
 
-# Querying MongoDB
+### Querying MongoDB
 
 MongoDB provides powerful querying capabilities. Let's explore some query operations:
 
 1. `Collection.findOne(query, options)`
 
 2. `Collection.find().project().sort().skip().limit().count()`
-   - `$in`: find in an array of elements
-   - `$all`: find in an array all elements matching in finding ['Smartphones', 'iOS']
-   - `$and`
-   - `$or`
-   - `$elemMatch`: find an object in an array of objects only, cannot find in a field not an array
-   - The array is sorted based on its first element
-   - `$size`: find the number of elements in an array `{$scores: {$size: 6}}`
-   
-3. `Collection.find().count()`
 
-4. `Collection.countDocuments()`
+- Comparison: The following operators can be used in queries to compare values: `{field:{operator:value}}`
+  - $eq: Values are equal
+  - $ne: Values are not equal
+  - $gt: Value is greater than another value
+  - $gte: Value is greater than or equal to another value
+  - $lt: Value is less than another value
+  - $lte: Value is less than or equal to another value
+  - $in: Value is matched within an array `{"salary":{$in:[5,10]}}`
+  - $nin: Value not in
+  - `$all`: find in an array all elements matching in finding ['Smartphones', 'iOS']
 
-5. `Collection.aggregate()`
+Eg: `db.trips.find({"id":{$in:[1,20]}})`
+
+- Logical: The following operators can logically compare multiple queries. `operator:[{condition1},{condition2},..]`
+  - $and: Returns documents where both queries match
+  - $or: Returns documents where either query matches
+  - $nor: Returns documents where both queries fail to match
+  - $not: Returns documents where the query does not match
+
+Eg: `db.trips.find({$or:["id":{$gt:10},"price":{$lt:19}]})`
+
+Evaluation: The following operators assist in evaluating documents.
+
+- $regex: Allows the use of regular expressions when evaluating field values
+- $text: Performs a text search
+- $where: Uses a JavaScript expression to match documents
+
+- `$expr`: `$expr: {operator:[field, value]}`
+- `$elemMatch`: find an object in an array of objects only, cannot find in a field ot an array
+- `$size`: find the number of elements in an array `{$scores: {$size: 6}}`
+
+1. `Collection.find().count()`
+
+2. `Collection.countDocuments()`
+
+3. `Collection.aggregate()`
    1. `[{$match:{}}, {$group:{}}, {$sort: {}}, {$skip: 10}, {$limit}]`
    2. Group: total, average
    3. `Var pipeline = [state1, state2, state3]`
    4. `{$count: "total"}`
-   
-6. `Collection.listIndexes()`
 
-7. `Collection.countDocuments(query)`
+4. `Collection.listIndexes()`
 
-8. `FindAndModify(query:{}, update: {}, {new: true})`: new = true: return a modified document
+5. `Collection.countDocuments(query)`
 
-9. Expression: `db.movies.find({$expr:{$gt: ["$idbm.votes", "$year"]}})`
+6. `FindAndModify(query:{}, update: {}, {new: true})`: new = true: return a modified document
 
-10. `Db.products.find("name":"Smartphone").count();`
+7. Expression: `db.movies.find({$expr:{$gt: ["$idbm.votes", "$year"]}})`
 
-```shell
+8. `Db.products.find("name":"Smartphone").count();`
+
+```javascript
 {
   "customer.gender": "M",
   items: {
@@ -84,16 +108,16 @@ MongoDB provides powerful querying capabilities. Let's explore some query operat
 }
 ```
 
-# Working with Documents - Insert, Update, and Delete
+### Working with Documents - Insert, Update, and Delete
 
-## Inserting Documents
+- Inserting Documents
 
 - `Collection.insertOne(document, option)`: Option = { writeConcern: { w : "majority", wtimeout : 100 } }
 - `Db.insert({}, {returnId: true})`
 - `Db.insert([])`
 - `Collection.insertMany()`
 
-## Updating Documents
+- Updating Documents
 
 - `Collection.updateOne(filter, update, option)`
   - Filter = query
@@ -107,13 +131,13 @@ MongoDB provides powerful querying capabilities. Let's explore some query operat
 
 - `await salesCollection.updateMany({items: {$elemMatch: {name: "printer paper"}}},{$set: {"items.$.price": 20 }});`
 
-## Deleting Documents
+- Deleting Documents
 
 - `deleteMany(query)`: If the query = {} delete all documents in the collection
 - `deleteOne()`: return `({acknowledge:true, deleteCount: 1})`
 - `deleteMany().deletedCount`
 
-# MongoDB Indexing
+### MongoDB Indexing
 
 MongoDB offers various indexing options to optimize query performance:
 
@@ -131,7 +155,7 @@ MongoDB offers various indexing options to optimize query performance:
 
   - Example Query: You can perform geospatial queries using operators like $near, $geoWithin, $geoIntersects, and others to find documents based on their geographical proximity or containment.
 
-# MongoDB Aggregation Framework
+### MongoDB Aggregation Framework
 
 MongoDB's Aggregation Framework is a powerful tool for data transformation and analysis. Let's explore some aggregation stages:
 
@@ -146,7 +170,7 @@ MongoDB's Aggregation Framework is a powerful tool for data transformation and a
 - `$bucketAuto :{groupBy: "$tripduration", buckets:5, output: {}}`
 - `$bucket: {groupBy:"$tripduration",boundaries: [10,100,1000,1000,100000], default: "other", output}`
 
-# Full Text Search in MongoDB
+### Full Text Search in MongoDB
 
 MongoDB supports full-text search with various options for tokenization and fuzzy searching.
 
@@ -180,7 +204,7 @@ Fuzzy option:
 - MaxExpansions
 - prefixLength
 
-# MongoDB Transactions
+## MongoDB Transactions
 
 MongoDB provides support for transactions, ensuring data consistency in complex operations.
 
@@ -192,27 +216,27 @@ CommitTransaction
 AbortTransaction
 ```
 
-# MongoDB Sharding and Replica Set
+## MongoDB Sharding and Replica Set
 
 Sharding and Replica Set are essential concepts for scaling and ensuring high availability in MongoDB.
 
-## Sharding
+### Sharding
 
 Sharding distributes data across multiple servers to improve read and write scalability.
 
-## Replica Set
+### Replica Set
 
 A Replica Set consists of multiple nodes with one primary node and two replicate nodes.
 
-# MongoDB Best Practices
+## MongoDB Best Practices
 
 MongoDB offers various best practices and considerations for efficient data modeling and management.
 
-## Data Model Patterns
+### Data Model Patterns
 
 There are 12 data model patterns, including Computed Pattern, Attribute Pattern, Polymorphic pattern, Bucket, Outline, and others.
 
-## Capped Collection
+### Capped Collection
 
 ```javascript
 db.createCollection("", {capped: true, size: 10, max: 3})
@@ -220,12 +244,12 @@ db.createCollection("", {capped: true, size: 10, max: 3})
 
 Capped collection has a Limit size.
 
-## Read and Write Concern
+### Read and Write Concern
 
 - Read Concern: Available, Majority, Local
 - Write Concern: Majority
 
-# MongoDB Views
+## MongoDB Views
 
 Creating and working with views in MongoDB:
 
@@ -236,29 +260,22 @@ Db.createView("name", "source", [])
 
 Cannot update to view.
 
-# MongoDB Administration and Tools
+## MongoDB Administration and Tools
 
 MongoDB provides tools and commands for administrative tasks, backup, and restore.
 
-## mongorestore
+### mongorestore
 
 Use `mongorestore` to restore a dump file to MongoDB.
 
-## Cursor Method and Indexing
+### Cursor Method and Indexing
 
 Choose the appropriate cursor method, like `Cursor.hint()`, to force MongoDB to use a specific index for a query.
 
-# MongoDB Security
+## MongoDB Security
 
 Ensure the security of your MongoDB instance by understanding the importance of the "admin" database and controlling user access.
 
-# Conclusion
+## Conclusion
 
 In conclusion, MongoDB offers a robust and flexible database solution with a wide range of features for efficient data management and querying. Understanding the various concepts and best practices will empower you to make the most out of MongoDB in your projects. Happy coding!
-
-
-
-![img](/img/2024-1-1-MongoDb.assets/image-20240101150106403.png)
-![img](/img/2024-1-1-MongoDb.assets/image-20240101150201886.png)
-![img](/img/2024-1-1-MongoDb.assets/image-20240101150221176.png)
-![img](/img/2024-1-1-MongoDb.assets/image-20240101150301552.png)

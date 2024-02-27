@@ -13,7 +13,7 @@ tags:
 ## Part 1: Query Operators
 
 ```javascript
-codedb.collection.findOne(query, projection)
+db.collection.findOne(query, projection)
 db.collection.find(query, projection)
 Case Sensitivity in MongoDB
 db.trips.FindOne() - is incorrect
