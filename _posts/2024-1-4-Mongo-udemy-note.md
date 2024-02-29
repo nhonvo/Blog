@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Mongo note - udemy note"
-subtitle:   "part 2"
+subtitle:   ""
 date:       2024-1-4 12:00:00
 author:     "Truong Nhon"
 hidden: false

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Mongodb practice"
-subtitle:   "Senior note section 2"
+title:      "Mongodb practice 3 section"
+subtitle:   "TRAINING COURSE"
 date:       2024-2-15 12:00:00
 author:     "Truong Nhon"
 published: true
@@ -10,7 +10,7 @@ tags:
     - mongodb
 ---
 
-## MONGODB PRACTICE SECTION 2
+## MONGODB PRACTICE SECTION 1
 
 ### Part 1: Query Operators
 
@@ -202,10 +202,10 @@ db.orders.aggregate( [
 
 Given the following documents:
 
-```
-jsonCopy {_id:1, restaurant: "Quesadillas Inc.", rating: 4.5 }
-{_id:2, restaurant: "Pasta Inc.", rating: 3.9}
-{_id:3, restaurant: "Tacos Inc.", rating: 2.5}
+```json
+{"_id":1, restaurant: "Quesadillas Inc.", rating: 4.5 },
+{"_id":2, restaurant: "Pasta Inc.", rating: 3.9},
+{"_id":3, restaurant: "Tacos Inc.", rating: 2.5}
 ```
 
 A developer wants to find the highest-rated restaurant in a list. An index has been created on the appropriate field. What query satisfies the requirements? (Choose 1)
@@ -335,9 +335,11 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
 
 ---
 
+## MONGODB PRACTICE SECTION 3
+
 ### Exam - 43/53 to PASS
 
-#### What will be asked?
+### What will be asked?
 
 - CRUD 27 – 28
   - Mongo Shell
@@ -361,7 +363,7 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
   - MongoDB Atlas UI
   - Data Explorer to query data
 
-#### Data Modeling
+### Data Modeling
 
 - Embedded Data
   - Embedded documents store related data in a single document structure. A document can contain arrays and sub-documents with related data.
@@ -369,7 +371,7 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
   - References store relationships between data by including links, called references, from one document to another.
 - Ref: [Data Modeling Guide](https://www.mongodb.com/docs/manual/data-modeling/)
   
-##### Data Modeling - Embedded
+#### Data Modeling - Embedded
 
 - Model One-to-One Relationships
   - Ref: [Embedded One-to-One Relationships](https://www.mongodb.com/docs/manual/tutorial/model-embedded-one-to-one-relationships-between-documents/)
@@ -379,16 +381,16 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
   - Limit size of a document: 16MB
   - Ref: [Embedded One-to-Many Relationships](https://www.mongodb.com/docs/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/)
 
-##### Data Modeling - References
+#### Data Modeling - References
 
 - Model One-to-Many Relationships with Document References
   - To avoid repetition of the referred data, use references
   - Example: Book and Publisher
   - Ref: [Referenced One-to-Many Relationships](https://www.mongodb.com/docs/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/)
 
-#### Atlas Search
+### Atlas Search
 
-##### Atlas Search – Index Field Mappings
+#### Atlas Search – Index Field Mappings
 
 - Dynamic Mapping
   - Automatically index all supported field types using dynamic mappings
@@ -412,7 +414,7 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
 
 - Ref: [Atlas Search - Field Mappings](https://www.mongodb.com/docs/atlas/atlas-search/define-field-mappings/)
 
-##### Atlas Search – Index Analyzer
+#### Atlas Search – Index Analyzer
 
 - Ref: [Atlas Search Analyzers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/)
 - Analyzer Description:
@@ -422,7 +424,7 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
   - Language: Provides a set of language-specific text analyzers.
   - Keyword: Indexes text fields as single terms.
 
-##### Atlas Search – Index Analyzer Tokenizer
+#### Atlas Search – Index Analyzer Tokenizer
 
 - whitespace
 - nGram
@@ -430,7 +432,7 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
 - regexCaptureGroup
 - Ref: [Atlas Search - Tokenizers](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/tokenizers/)
 
-##### Atlas Search – Query
+#### Atlas Search – Query
 
 - Single Field Search
 - Multiple Field Search
@@ -448,7 +450,7 @@ $search: {
 }
 ```
 
-##### Atlas Search – Query Compound
+#### Atlas Search – Query Compound
 
 - should
 - must
@@ -456,27 +458,27 @@ $search: {
 - filter
 - Ref: [Atlas Search - Compound](https://www.mongodb.com/docs/atlas/atlas-search/compound/)
 
-#### Node.js Driver
+### Node.js Driver
 
 - Connection
   - Video: [Connecting to MongoDB in Node.js](https://learn.mongodb.com/courses/connecting-to-mongodb-in-nodejs)
   - Ref: [Node.js Driver Connection](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/)
   
-##### CRUD
+#### CRUD
 
 - Video: [MongoDB CRUD Operations in Node.js](https://learn.mongodb.com/courses/mongodb-crud-operations-in-nodejs)
 - Ref: [Node.js Driver CRUD](https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/)
 
-##### Aggregation
+#### Aggregation driver
 
 - Video: [MongoDB Aggregation with Node.js](https://learn.mongodb.com/courses/mongodb-aggregation-with-nodejs)
 - Ref: [Node.js Driver Aggregation](https://www.mongodb.com/docs/drivers/node/current/fundamentals/aggregation/)
 
-##### MongoClient API
+#### MongoClient API
 
 - Ref: [MongoClient API](https://mongodb.github.io/node-mongodb-native/6.3/classes/MongoClient.html)
 
-##### Node.js Driver – Connection Pool
+#### Node.js Driver – Connection Pool
 
 - Definition
   - A connection pool is a cache of open, ready-to-use database connections maintained by the driver.
@@ -489,11 +491,11 @@ $search: {
   - When requesting a connection and there’s an available connection in the pool, a new connection does not need to be created.
 - Ref: [Connection Pool Overview](https://www.mongodb.com/docs/manual/administration/connection-pool-overview/)
 
-#### Practice Questions
+### Practice Questions
 
 - [Practice Questions](https://learn.mongodb.com/learn/course/associate-developer-node-practice-questions/prep-questions/practice-questions)
 
-#### Homework
+### Homework driver
 
 - Review workshop record
 - Follow the video of Node.js Driver and practice with your sample collections in MDB_EDU database ([cloud.mongodb.com](https://cloud.mongodb.com))

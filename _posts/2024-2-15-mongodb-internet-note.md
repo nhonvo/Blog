@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Mongodb practice"
-subtitle:   "Senior note section 2"
+title:      "Mongodb practice internet"
+subtitle:   ""
 date:       2024-2-15 12:00:00
 author:     "Truong Nhon"
 published: true

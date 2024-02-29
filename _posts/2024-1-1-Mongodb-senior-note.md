@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Exploring MongoDB and mongosh in Bash - Senior note"
-subtitle:   "part 1"
+subtitle:   ""
 date:       2024-1-1 12:00:00
 author:     "Truong Nhon"
 hidden: false
