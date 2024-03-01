@@ -38,6 +38,8 @@ MongoDB uses BSON types to represent data. Here are some key BSON types:
 - Decimal128
 - Array
 
+Data types ObjectId init from timestamp, increment, machineId, randomNumber
+
 ### Querying MongoDB
 
 MongoDB provides powerful querying capabilities. Let's explore some query operations:

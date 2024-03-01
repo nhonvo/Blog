@@ -198,6 +198,20 @@ db.orders.aggregate( [
 
 [Aggregation Pipeline Optimization](https://www.mongodb.com/docs/manual/core/aggregation-pipeline-optimization/)
 
+- Another aggregation pipeline
+
+```javascript
+db.collection.aggregate.(
+  [{
+    "$search": {
+    "text":
+    {
+      "path": "name",
+      "query": "cuban"
+    }
+}}])
+```
+
 #### Aggregation - Exam Question
 
 Given the following documents:
@@ -210,10 +224,10 @@ Given the following documents:
 
 A developer wants to find the highest-rated restaurant in a list. An index has been created on the appropriate field. What query satisfies the requirements? (Choose 1)
 
-A. `const pipeline = [ { $sort: { rating : -1, limit: 1 } } ]; const aggCursor = coll.runAggregation(pipeline);`
-B. `const pipeline = [ { $sort: { rating : -1 } }, { $limit: 1 } ]; const aggCursor = coll.runAggregation(pipeline);`
-C. `const pipeline = [ { $sort: { rating : -1 , limit: 1} } ]; const aggCursor = coll.aggregate(pipeline);`
-D. `const pipeline = [ { $sort: { rating : -1 } }, { $limit: 1 } ]; const aggCursor = coll.aggregate(pipeline);`
+- A. `const pipeline = [ { $sort: { rating : -1, limit: 1 } } ]; const aggCursor = coll.runAggregation(pipeline);`
+- B. `const pipeline = [ { $sort: { rating : -1 } }, { $limit: 1 } ]; const aggCursor = coll.runAggregation(pipeline);`
+- C. `const pipeline = [ { $sort: { rating : -1 , limit: 1} } ]; const aggCursor = coll.aggregate(pipeline);`
+- D. `const pipeline = [ { $sort: { rating : -1 } }, { $limit: 1 } ]; const aggCursor = coll.aggregate(pipeline);`
 
 ### Index
 
