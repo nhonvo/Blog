@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Mongodb practice 3 section"
+title:      "Mongodb practice"
 subtitle:   "TRAINING COURSE"
 date:       2024-2-15 12:00:00
 author:     "Truong Nhon"
@@ -64,11 +64,11 @@ db.inspections.find({$or: [{result: "No Violation Issued"}, {result: "Violation 
 ```javascript
 db.inspections.find({"address.zip": 11427})
 db.inspections.find({result: "Pass","address.zip": {$in:[11427]}}, {result: 1, date:1, address:1})
-db.inspections.updateMany({_id: ObjectId('56d61033a378eccde8a83569')}, {$set: {"address.phone": {: '84', number: '999988778'}})
+db.inspections.updateMany({_id: ObjectId('56d61033a378eccde8a83569')}, {$set: {"address.phone": {: '84', number: '999988778'}}})
 Find 3 level of embedded documents
 db.inspections.find({"address.phone.": "84"});
 
-db.accounts.find({"products":['Brokerage','InvestmentStock']);
+db.accounts.find({"products":['Brokerage','InvestmentStock']});
 $all
 db.accounts.find({"products":{$all:['Brokerage','InvestmentStock']}})
 $inc
@@ -76,7 +76,7 @@ db.accounts.find({"products":{$in:['Brokerage','InvestmentStock']}})
 $size
 db.accounts.find({"products":{$size: 3}})
 $elemMatch
-db.grades.find({"scores":{$elemMatch:{"type":"exam", "score: {$gt: 80}}}})
+db.grades.find({"scores":{$elemMatch:{"type":"exam", "score": {$gt: 80}}}})
 ```
 
 [Array Query Operators Reference](https://www.mongodb.com/docs/manual/reference/operator/query-array/)
@@ -110,6 +110,13 @@ db.collection.insertOne({});
 We can insert empty object {}, it will generate _id for this object
 We cannot insert with the same _id
 db.testcollection.insertOne({_id: 1001, "name": "Test","scores":10})
+db.collection.bulkWrite([
+  {insertOne:{_id:3, name:"test"}}, 
+  {insertOne:{_id:4, name:"test2"}}
+                          ])
+
+db.collection.insertOne({date: new Date("2022-02-02T00:00:00Z")})
+db.collection.insertOne({date: ISODate("2022-02-02T00:00:00Z")})
 ```
 
 [Insert Documents Tutorial](https://www.mongodb.com/docs/manual/tutorial/insert-documents/)
@@ -135,6 +142,7 @@ db.collection.drop()
 ```javascript
 db.collection.updateOne({filter}{update},{option})
 db.collection.updateMany({filter},{update}, {option})
+db.collection.findOneAndUpdate({filter},{update}, {option})
 $set
 $inc
 db.zips.updateMany({city: "MC CALLA"}, {$inc: {pop: 1}})
@@ -419,7 +427,6 @@ db.cars.createIndex({ manufacturer: 1, model: 1, cost: 1 })
     "fields": {
         "<field-name>": {
         "type": "<field-type>",
-        …
         }
     }
     }

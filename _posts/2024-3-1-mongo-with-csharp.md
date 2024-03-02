@@ -11,7 +11,7 @@ tags:
   - c#
 ---
 
-## Working with MongoDB Documents in C#
+## Working with MongoDB Documents in C #
 
 Review the following code, which demonstrates how to represent a document in C#.
 
@@ -555,7 +555,7 @@ foreach (var account in results)
 
 ---
 
-## MongoDB Aggregation with C#
+## MongoDB Aggregation with C #
 
 In this unit, you learned how to:
 
