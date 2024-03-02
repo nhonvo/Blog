@@ -220,6 +220,15 @@ db.collection.aggregate.(
 }}])
 ```
 
+```javascript
+db.collection.aggregate([$lookup: {
+  from:'',
+  localField:'',
+  foreignField:'',
+  as:''
+}])
+```
+
 #### Aggregation - Exam Question
 
 Given the following documents:
