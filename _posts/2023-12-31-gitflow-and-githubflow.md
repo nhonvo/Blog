@@ -11,11 +11,7 @@ catalog:      true
 lang: en
 tags:
 - git
-
 ---
-
-# Version Control Workflow Analysis: Gitflow vs GitHub Flow
-
 ## Gitflow
 
 Gitflow is a branching model built around Git, defining a structured approach to managing branches for different purposes in larger projects. It consists of several key branches: `master`, `develop`, `feature`, `release`, and `hotfix`.

@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      "Mongodb practice"
-subtitle:   "TRAINING COURSE"
+title:      "Mongodb theory and examples code"
+subtitle:   "Associate developer MongoDB C# certificate exam"
 date:       2024-2-15 12:00:00
 author:     "Truong Nhon"
 published: true
 catalog: true
 tags:
-    - mongodb
+  - mongodb
 ---
 
 ## MONGODB PRACTICE SECTION 1

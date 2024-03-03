@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Exploring MongoDB and mongosh in Bash - Senior note"
-subtitle:   ""
+title:      "Exploring MongoDB and mongosh in Bash"
+subtitle:   "Associate developer MongoDB C# certificate exam"
 date:       2024-1-1 12:00:00
 author:     "Truong Nhon"
 hidden: false
@@ -10,6 +10,7 @@ catalog:      true
 lang: en
 tags:
   - mongodb
+  - database
 ---
 
 Are you ready to dive into the world of MongoDB and its powerful shell, mongosh? Let's begin our journey by learning how to install mongosh.

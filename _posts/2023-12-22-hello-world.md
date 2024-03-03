@@ -9,7 +9,7 @@ header-img: "img/post-bg-apple-event-2015.jpg"
 multilingual: true
 lang: en
 tags:
-    - C#
+    - c#
     - .Net
 ---
 

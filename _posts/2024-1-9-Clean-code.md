@@ -10,10 +10,8 @@ multilingual: false
 catalog:      true
 lang: en
 tags:
-- net
+- c#
 ---
-
-# Clean Code .NET
 
 ## Naming
 
@@ -33,7 +31,6 @@ int d;
 int daySinceModification;
 ```
 
-
 <b>Avoid Misleading Names</b>
 
 Name the variable to reflect what it is used for.
@@ -49,7 +46,6 @@ var dataFromDb = db.GetFromService().ToList();
 ```csharp
 var listOfEmployee = _employeeService.GetEmployees().ToList();
 ```
-
 
 <b>Avoid Hungarian notation</b>
 
@@ -91,7 +87,6 @@ public bool IsShopOpen(string day, int amount)
 }
 ```
 
-
 <b>Use consistent capitalization</b>
 
 Capitalization tells you a lot about your variables,
@@ -130,7 +125,6 @@ class Animal {}
 class Alpaca {}
 ```
 
-
 <b>Use pronounceable names</b>
 
 It will take time to investigate the meaning of the variables and functions when they are not pronounceable.
@@ -154,7 +148,6 @@ public class Employee
     public Datetime ModificationTime { get; set; }
 }
 ```
-
 
 <b>Use Camelcase notation</b>
 
@@ -181,7 +174,6 @@ public double CalculateSalary(int workingDays, int workingHours)
     // some logic
 }
 ```
-
 
 <b>Use domain name</b>
 
@@ -222,7 +214,6 @@ public static void main(String[] args)
     singletonObject.ShowMessage();
 }
 ```
-
 
 ## Variables
 
@@ -332,7 +323,6 @@ public long Fibonacci(int n)
 }
 ```
 
-
 <b>Avoid mental mapping</b>
 
 Don’t force the reader of your code to translate what the variable means. **Explicit is better than implicit**.
@@ -373,7 +363,6 @@ foreach (var location in locations)
 }
 ```
 
-
 <b>Avoid magic string</b>
 
 Magic strings are string values that are specified directly within application code that have an impact on the application’s behavior. Frequently, such strings will end up being duplicated within the system, and since they cannot automatically be updated using refactoring tools, they become a common source of bugs when changes are made to some strings but not others.
@@ -398,7 +387,6 @@ if (userRole == ADMIN_ROLE)
 ```
 
 Using this we only have to change in centralize place and others will adapt it.
-
 
 <b>Don't add unneeded context</b>
 
@@ -430,7 +418,6 @@ public class Car
 }
 ```
 
-
 <b>Use meaningful and pronounceable variable names</b>
 
 **Bad:**
@@ -444,7 +431,6 @@ var ymdstr = DateTime.UtcNow.ToString("MMMM dd, yyyy");
 ```csharp
 var currentDate = DateTime.UtcNow.ToString("MMMM dd, yyyy");
 ```
-
 
 <b>Use the same vocabulary for the same type of variable</b>
 
@@ -462,7 +448,6 @@ GetUserProfile();
 ```csharp
 GetUser();
 ```
-
 
 <b>Use searchable names (part 1)</b>
 
@@ -503,7 +488,6 @@ Console.Write("JSON form of Data object: ");
 Console.WriteLine(sr2.ReadToEnd());
 ```
 
-
 <b>Use searchable names (part 2)</b>
 
 **Bad:**
@@ -542,7 +526,6 @@ if (person.PersonAccess == PersonAccess.ACCESS_UPDATE)
 }
 ```
 
-
 <b>Use explanatory variables</b>
 
 **Bad:**
@@ -573,7 +556,6 @@ if(cityGroup.Success == true && zipCodeGroup.Success == true)
 }
 ```
 
-
 <b>Use default arguments instead of short circuiting or conditionals</b>
 
 **Not good:**
@@ -598,7 +580,6 @@ public void CreateMicrobrewery(string breweryName = "Hipster Brew Co.")
     // ...
 }
 ```
-
 
 ## Functions
 
@@ -645,7 +626,6 @@ Console.WriteLine(name); // Ryan McDermott
 Console.WriteLine(fullName); // His first name is Ryan, and his last name is McDermott
 ```
 
-
 <b>Avoid negative conditionals</b>
 
 **Bad:**
@@ -675,7 +655,6 @@ if (IsDOMNodePresent(node))
     // ...
 }
 ```
-
 
 <b>Avoid conditionals</b>
 
@@ -745,7 +724,6 @@ class Cessna : IAirplane
 }
 ```
 
-
 <b>Avoid type-checking (part 1)</b>
 
 **Bad:**
@@ -790,7 +768,6 @@ public Path TravelToTexas(object vehicle)
 }
 ```
 
-
 <b>Avoid type-checking (part 2)</b>
 
 **Bad:**
@@ -816,7 +793,6 @@ public int Combine(int val1, int val2)
     return val1 + val2;
 }
 ```
-
 
 <b>Avoid flags in method parameters</b>
 
@@ -851,7 +827,6 @@ public void CreateTempFile(string name)
     Touch("./temp/"  + name);
 }
 ```
-
 
 <b>Don't write to global functions</b>
 
@@ -897,7 +872,6 @@ var configuration = new Configuration(new Dictionary<string, string>() {
 ```
 
 And now you must use instance of `Configuration` in your application.
-
 
 <b>Don't use a Singleton pattern</b>
 
@@ -961,7 +935,6 @@ var connection = new DBConnection(options);
 
 And now you must use instance of `DBConnection` in your application.
 
-
 <b>Function arguments (2 or fewer ideally)</b>
 
 Limiting the amount of function parameters is incredibly important because it makes testing your function easier. Having more than three leads to a combinatorial explosion where you have to test tons of different cases with each separate argument.
@@ -1002,7 +975,6 @@ public void CreateMenu(MenuConfig config)
 }
 ```
 
-
 <b>Functions should do one thing</b>
 
 This is by far the most important rule in software engineering. When functions do more than one thing, they are harder to compose, test, and reason about. When you can isolate a function to just one action, they can be refactored easily and your code will read much
@@ -1038,7 +1010,6 @@ public List<Client> GetActiveClients(string[] clients)
     return db.Find(clients).Where(s => s.Status == "Active");
 }
 ```
-
 
 <b>Function names should say what they do</b>
 
@@ -1077,7 +1048,6 @@ var message = new Email(...);
 // Clear and obvious
 message.Send();
 ```
-
 
 <b>Functions should only be one level of abstraction</b>
 
@@ -1228,7 +1198,6 @@ class BetterJSAlternative
 }
 ```
 
-
 <b>Function callers and callees should be close</b>
 
 If a function calls another, keep those functions vertically close in the source file. Ideally, keep the caller right above the callee. We tend to read code from top-to-bottom, like a newspaper. Because of this, make your code read that way.
@@ -1334,7 +1303,6 @@ var review = new PerformanceReview(employee);
 review.PerfReview();
 ```
 
-
 <b>Encapsulate conditionals</b>
 
 **Bad:**
@@ -1354,7 +1322,6 @@ if (article.IsPublished())
     // ...
 }
 ```
-
 
 <b>Remove dead code</b>
 
@@ -1388,7 +1355,6 @@ public void RequestModule(string url)
 var request = RequestModule(requestUrl);
 InventoryTracker("apples", request, "www.inventory-awesome.io");
 ```
-
 
 ## Objects and Data Structures
 
@@ -1463,7 +1429,6 @@ bankAccount.WithdrawBalance(price);
 balance = bankAccount.Balance;
 ```
 
-
 <b>Make objects have private/protected members</b>
 
 **Bad:**
@@ -1499,7 +1464,6 @@ class Employee
 var employee = new Employee("John Doe");
 Console.WriteLine(employee.Name); // Employee name: John Doe
 ```
-
 
 ## Classes
 
@@ -1561,7 +1525,6 @@ internal static void ListFluentExtensions()
         .FluentClear();
 }
 ```
-
 
 <b>Prefer composition over inheritance</b>
 
@@ -1649,7 +1612,6 @@ class Employee
 }
 ```
 
-
 ## SOLID
 
 <b>What is SOLID?</b>
@@ -1661,7 +1623,6 @@ class Employee
 - [L: Liskov Substitution Principle (LSP)](#liskov-substitution-principle-lsp)
 - [I: Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
 - [D: Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
-
 
 <b>Single Responsibility Principle (SRP)</b>
 
@@ -1734,7 +1695,6 @@ class UserSettings
     }
 }
 ```
-
 
 <b>Open/Closed Principle (OCP)</b>
 
@@ -1843,7 +1803,6 @@ class HttpRequester
     }
 }
 ```
-
 
 <b>Liskov Substitution Principle (LSP)</b>
 
@@ -1982,7 +1941,6 @@ var shapes = new[] { new Rectangle(), new Rectangle(), new Square() };
 RenderLargeRectangles(shapes);
 ```
 
-
 <b>Interface Segregation Principle (ISP)</b>
 
 ISP states that "Clients should not be forced to depend upon interfaces that they do not use."
@@ -2067,7 +2025,6 @@ public class Robot : IWorkable
     }
 }
 ```
-
 
 <b>Dependency Inversion Principle (DIP)</b>
 
@@ -2168,7 +2125,6 @@ public class Manager
 }
 ```
 
-
 <b>Don’t repeat yourself (DRY)</b>
 
 Try to observe the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle.
@@ -2260,7 +2216,6 @@ public List<EmployeeData> ShowList(Employee employees)
 }
 ```
 
-
 ## Testing
 
 <b>Basic concept of testing</b>
@@ -2269,7 +2224,6 @@ Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you didn't break anything. Deciding on what constitutes an adequate amount is up to your team, but having 100% coverage (all statements and branches) is how you achieve very high confidence and developer peace of mind. This means that in addition to having a great testing framework, you also need to use a [good coverage tool](https://docs.microsoft.com/en-us/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested).
 
 There's no excuse to not write tests. There's [plenty of good .NET test frameworks](https://github.com/thangchung/awesome-dotnet-core#testing), so find one that your team prefers. When you find one that works for your team, then aim to always write tests for every new feature/module you introduce. If your preferred method is Test Driven Development (TDD), that is great, but the main point is to just make sure you are reaching your coverage goals before launching any feature, or refactoring an existing one.
-
 
 <b>Single concept per test</b>
 
@@ -2348,8 +2302,7 @@ public class MakeDotNetGreatAgainTests
 
 ```
 
-> Soure https://www.codingblocks.net/podcast/how-to-write-amazing-unit-tests
-
+> Soure <https://www.codingblocks.net/podcast/how-to-write-amazing-unit-tests>
 
 ## Concurrency
 
@@ -2409,15 +2362,13 @@ There are many new await-friendly techniques that should be used instead of the 
 | `Thread.Sleep`     | `await Task.Delay`                   | Wait/await for a period of time                               |
 | `Task` constructor | `Task.Run` or `TaskFactory.StartNew` | Create a code-based task                                      |
 
-> Source https://gist.github.com/jonlabelle/841146854b23b305b50fa5542f84b20c
-
+> Source <https://gist.github.com/jonlabelle/841146854b23b305b50fa5542f84b20c>
 
 ## Error Handling
 
 <b>Basic concept of error handling</b>
 
 Thrown errors are a good thing! They mean the runtime has successfully identified when something in your program has gone wrong and it's letting you know by stopping function execution on the current stack, killing the process (in .NET/.NET Core), and notifying you in the console with a stack trace.
-
 
 <b>Don't use 'throw ex' in catch block</b>
 
@@ -2453,7 +2404,6 @@ catch (Exception ex)
 }
 ```
 
-
 <b>Don't ignore caught errors</b>
 
 Doing nothing with a caught error doesn't give you the ability to ever fix or react to said error. Throwing the error isn't much better as often times it can get lost in a sea of things printed to the console. If you wrap any bit of code in a `try/catch` it means you think an error may occur there and therefore you should have a plan, or create a code path, for when it occurs.
@@ -2486,7 +2436,6 @@ catch (Exception error)
     ReportErrorToService(error);
 }
 ```
-
 
 <b>Use multiple catch block instead of if conditions.</b>
 
@@ -2530,7 +2479,6 @@ catch (TaskSchedulerException ex)
     // Take action for TaskSchedulerException
 }
 ```
-
 
 <b>Keep exception stack trace when rethrowing exceptions</b>
 
@@ -2578,7 +2526,6 @@ catch (Exception error)
     throw new CustomException(error);
 }
 ```
-
 
 ## Formatting
 
@@ -2745,7 +2692,6 @@ indent_size = 2
 
 ```
 
-
 ## Comments
 
 <b>Avoid positional markers</b>
@@ -2810,7 +2756,6 @@ void Actions()
 };
 ```
 
-
 <b>Don't leave commented out code in your codebase</b>
 
 Version control exists for a reason. Leave old code in your history.
@@ -2829,7 +2774,6 @@ doStuff();
 ```csharp
 doStuff();
 ```
-
 
 <b>Don't have journal comments</b>
 
@@ -2858,7 +2802,6 @@ public int Combine(int a,int b)
     return a + b;
 }
 ```
-
 
 <b>Only comment things that have business logic complexity</b>
 

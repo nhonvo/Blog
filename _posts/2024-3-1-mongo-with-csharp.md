@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Mongo with Csharp"
-subtitle:   ""
+title:      "Mongo with csharp"
+subtitle:   "Associate developer MongoDB csharp certificate exam"
 date:       2024-3-1 00:00:00
 author:     "Truong Nhon"
 published: true
@@ -11,9 +11,9 @@ tags:
   - c#
 ---
 
-## Working with MongoDB Documents in C #
+## Working with MongoDB Documents in Csharp
 
-Review the following code, which demonstrates how to represent a document in C#.
+Review the following code, which demonstrates how to represent a document in Csharp.
 
 ### BsonDocument
 
@@ -31,12 +31,12 @@ var document = new BsonDocument
 };
 ```
 
-### C# Class (POCOs)
+### Csharp Class (POCOs)
 
 Each public property maps to a field in the BSON document.
 
 - The `BsonId` attribute specifies a field that must always be unique.
-- The `BsonRepresentation` attribute maps a C# type to a specific BSON type.
+- The `BsonRepresentation` attribute maps a Csharp type to a specific BSON type.
 - The `BsonElement` attribute maps to the BSON field name.
 
 Here's an example:
@@ -68,11 +68,11 @@ internal class Account
 
 ---
 
-## Using MongoDB Aggregation Stages with C#: `Match` and `Group`
+## Using MongoDB Aggregation Stages with Csharp: `Match` and `Group`
 
 Review the following code, which demonstrates how to use the `Match` and `Group` aggregation methods in MongoDB.
 
-### Match by Using C# Class
+### Match by Using Csharp Class
 
 `Match` filters documents that match the specified conditions and passes them to the next stage of the pipeline. In following code, we request all documents where the `Balance` field has a value that's less than or equal to 1000. We can view the results by casting the `aggregate` object to a list.
 
@@ -131,9 +131,9 @@ foreach (var account in results)
 
 ---
 
-## Querying a MongoDB Collection in C# Applications
+## Querying a MongoDB Collection in Csharp Applications
 
-Review the following code, which demonstrates how to query documents in MongoDB with C#.
+Review the following code, which demonstrates how to query documents in MongoDB with Csharp.
 
 ### Find a Document with `FirstOrDefault`
 
@@ -149,7 +149,7 @@ var account = accountsCollection
 
 The `FindAsync()` command with a LINQ expression matches the `AccountID` field. The `FirstOrDefault()` method returns the first or default result. For example:
 
-```
+```csharp
 var accounts = await accountsCollection
    .FindAsync(a => a.AccountId == "MDB829001337");
 
@@ -204,11 +204,11 @@ var documents = await accountsCollection
 
 ---
 
-#### Lesson 4: Updating Documents in C# Applications / Learn
+#### Lesson 4: Updating Documents in Csharp Applications / Learn
 
-## Updating Documents in C# Applications
+## Updating Documents in Csharp Applications
 
-Review the following code, which demonstrates how to update documents in MongoDB with C#.
+Review the following code, which demonstrates how to update documents in MongoDB with Csharp.
 
 ### Update a Single Document
 
@@ -278,9 +278,9 @@ Console.WriteLine(result.ModifiedCount);
 
 ---
 
-## Deleting Documents in C# Applications
+## Deleting Documents in Csharp Applications
 
-Review the following code, which demonstrates how to delete documents in MongoDB with C#.
+Review the following code, which demonstrates how to delete documents in MongoDB with Csharp.
 
 ### Delete a Single Document
 
@@ -338,13 +338,13 @@ Console.WriteLine(deleteResult.DeletedCount);
 
 ---
 
-## Creating MongoDB Transactions in C# Applications
+## Creating MongoDB Transactions in Csharp Applications
 
-Review the following code, which demonstrates how to create a multi-document transaction in MongoDB with C#.
+Review the following code, which demonstrates how to create a multi-document transaction in MongoDB with Csharp.
 
 ### Multi-Document Transaction
 
-The following are the steps and the code to create a multi-document transaction in MongoDB with C#. The transaction is started by using the session’s `WithTransaction()` method. Then, we define the sequence of operations to perform inside the transaction. Here are the steps:
+The following are the steps and the code to create a multi-document transaction in MongoDB with Csharp. The transaction is started by using the session’s `WithTransaction()` method. Then, we define the sequence of operations to perform inside the transaction. Here are the steps:
 
 1. Start a new session.
 2. Begin a transaction with the `WithTransaction()` method on the session.
@@ -416,72 +416,7 @@ using (var session = client.StartSession())
 }
 ```
 
----
-
-## Using MongoDB Aggregation Stages with C#: `Match` and `Group`
-
-Review the following code, which demonstrates how to use the `Match` and `Group` aggregation methods in MongoDB.
-
-### Match by Using C# Class
-
-`Match` filters documents that match the specified conditions and passes them to the next stage of the pipeline. In following code, we request all documents where the `Balance` field has a value that's less than or equal to 1000. We can view the results by casting the `aggregate` object to a list.
-
-```
-var matchStage = Builders<Accounts>.Filter.Lte(u => u.Balance, 1000);
-var aggregate = accountsCollection.Aggregate()
-                          .Match(matchStage);
-var results = aggregate.ToList();
-
-foreach (var account in results)
-{
-    Console.WriteLine(account.Balance);
-}
-```
-
-### Match by Using `BsonDocument`
-
-`Match` filters documents that match the specified conditions to the next stage of the pipeline. When you're working with BsonDocuments, the process is identical, except that we use a builder of type `BsonDocument`. Also, we can’t use LINQ to define the properties that we want to filter on. Here's an example:
-
-```csharp
-var matchStage = Builders<BsonDocument>.Filter.Lte("balance", 1000);
-var aggregate = accountsCollection.Aggregate()
-                          .Match(matchStage);
-var results = aggregate.ToList();
-
-foreach (var account in results)
-{
-    Console.WriteLine(account.Balance);
-}
-```
-
-### `Group` Stage
-
-The `Group` stage separates documents into groups according to a group key. The output of this stage is one document for each unique group key. In the following code, we use a LINQ expression and create a new generic object with the fields we want. We keep the same names for the first three properties: `AccountId`, `AccountType`, and `Balance`. We also create a new field called `GBP`, which is calculated by dividing the current `Balance` field by 1.3.
-
-```csharp
-var matchStage = Builders<BsonDocument>.Filter.Lte("balance", 1000);
-var aggregate = accountCollection.Aggregate()
-   .Match(matchStage)
-   .Group(
-       a => a.AccountType,
-       r => new
-       {
-           accountType = r.Key,
-           total = r.Sum(a => 1)
-       }
-   );
-
-var results = aggregate.ToList();
-
-foreach (var account in results)
-{
-    Console.WriteLine(account.Balance);
-}
-```
-
----
-
-## Using MongoDB Aggregation Stages with C#: `Sort` and `Project`
+## Using MongoDB Aggregation Stages with Csharp: `Sort` and `Project`
 
 Review the following code, which demonstrates how to use the `Sort` and `Project` aggregation methods in MongoDB.
 
@@ -529,7 +464,7 @@ To create a projection, we use the `ProjectionDefinitionBuilder`. We use the `Ex
 
 In the following code, we use a LINQ expression to create a new generic object with the fields we want. We keep the same names for the first three properties: `AccountId`, `AccountType`, and `Balance`. We create a new field called `GBP`, which is calculated by dividing the current `Balance` field by `1.3`.
 
-```c#
+```Csharp
 var matchBalanceStage = Builders<Accounts>.Filter.Lt(user => user.Balance, 1500);
 var projectStage = Builders<Accounts>.Projection.Expression(u =>
     new
@@ -555,7 +490,7 @@ foreach (var account in results)
 
 ### Sample
 
-```c#
+```Csharp
 IMongoDatabase db = dbClient.GetDatabase("postal_data");
 var zipEntries = db.GetCollection<ZipEntry>("zip_entries");
 var builder = Builders<ZipEntry>.Filter;
@@ -567,7 +502,7 @@ var results = zipEntries.Find(filter).Sort(sort).Project(projection).ToList();
 
 ---
 
-## MongoDB Aggregation with C#
+## MongoDB Aggregation with Csharp
 
 In this unit, you learned how to:
 
@@ -577,27 +512,4 @@ In this unit, you learned how to:
 
 ### Resources
 
-Use the following resources to learn more about performing basic aggregation with C#:
-
-#### Lesson 01: Building a MongoDB Aggregation Pipeline in C# Applications
-
-- [Aggregation](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/crud/reading/#aggregation)
-- [C# Aggregation Pipelines](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/definitions/#pipelines)
-
-#### Using MongoDB Aggregation Stages with C#: `Match` and `Group`
-
-- [Match](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/crud/reading/#match)
-- [Group](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/crud/reading/#group/)
-
-#### Using MongoDB Aggregation Stages with C#: `Sort` and `Project`
-
-- [Sorting](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/crud/reading/#sort/)
-- [Projection](https://mongodb.github.io/mongo-csharp-driver/2.17/reference/driver/definitions/#projections)
-
-### MongoDB C# Drivers Course
-
-By completing this unit, you've taken a step toward completing the MongoDB C# Drivers course.
-
-If you're interested in continuing, your next step is to review the following topic:
-
-- Additional aggregation stages and operators in C
+Use the following resources to learn more about performing basic aggregation with Csharp:

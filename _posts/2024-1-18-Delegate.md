@@ -10,11 +10,9 @@ multilingual: false
 catalog:      true
 lang: en
 tags:
-- net
+- c#
 - delegate
 ---
-
-# Exploring Dynamic Distance Calculation with Delegates: A Proof of Concept
 
 Welcome to our latest project - a Proof of Concept (PoC) repository that explores dynamic distance calculation using delegates. In this blog post, we'll take you through the features, the motivation behind the project, and how you can experiment with dynamic resolution of distance calculation services in a web API.
 
@@ -46,9 +44,9 @@ We encourage you to explore, experiment, and contribute. If you encounter issues
 
 ## Demo
 
-**Clone the Repository** : 
+**Clone the Repository** :
 
-```
+```bash
 git clone https://github.com/nhonvo/delegate-poc.git
 cd delegate-poc
 ```

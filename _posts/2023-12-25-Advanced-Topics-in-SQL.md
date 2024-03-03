@@ -16,22 +16,19 @@ catalog:      true
 lang: en
 tags:
 - sql
-- advance
-- join
-- subqueries
-
+- database
 ---
 
-##  SQL Clauses
+## SQL Clauses
 
 - WHERE, ORDER BY, GROUP BY, and HAVING: Crafting strategic queries.
 - Today's exploration: INNER JOIN, OUTER JOIN, EXCLUDING JOIN, SELF JOIN, CROSS JOIN, UNION, and UNION ALL.
 
-##  Why Do We Need JOIN?
+## Why Do We Need JOIN?
 
 - Combining data from multiple tables based on matching conditions for comprehensive analysis.
 
-##  INNER JOIN: A Deeper Dive
+## INNER JOIN: A Deeper Dive
 
 ```sql
 -- Example of INNER JOIN
@@ -42,7 +39,7 @@ INNER JOIN CustomerOrder o ON c.CustomerID = o.CustomerID;
 
 In this practice, we retrieve customer information along with their corresponding orders using INNER JOIN.
 
-##  JOIN More Than 2 Tables
+## JOIN More Than 2 Tables
 
 ```sql
 -- Example of INNER JOIN with 3 tables
@@ -54,7 +51,7 @@ INNER JOIN DeliveryAddress d ON d.ID = o.DeliveryAddressID;
 
 Extending the concept of INNER JOIN to involve three tables for a more comprehensive result set.
 
-##  LEFT JOIN: Embracing Incompleteness
+## LEFT JOIN: Embracing Incompleteness
 
 ```sql
 -- Example of LEFT JOIN
@@ -65,7 +62,7 @@ LEFT JOIN CustomerOrder o ON c.CustomerID = o.CustomerID;
 
 Incorporating LEFT JOIN to include all customers, even those without orders.
 
-##  RIGHT JOIN: Balancing the Equation
+## RIGHT JOIN: Balancing the Equation
 
 ```sql
 -- Example of RIGHT JOIN
@@ -76,7 +73,7 @@ RIGHT JOIN CustomerOrder o ON c.CustomerID = o.CustomerID;
 
 Implementing RIGHT JOIN to include all orders, even those without customers.
 
-##  FULL JOIN: Embracing Completeness
+## FULL JOIN: Embracing Completeness
 
 ```sql
 -- Example of FULL JOIN
@@ -87,7 +84,7 @@ FULL JOIN CustomerOrder o ON c.CustomerID = o.CustomerID;
 
 Utilizing FULL JOIN to encompass all customers and orders, regardless of matches.
 
-##  LEFT EXCLUDING JOIN: Seeking the Unique
+## LEFT EXCLUDING JOIN: Seeking the Unique
 
 ```sql
 -- Example of LEFT EXCLUDING JOIN
@@ -99,7 +96,7 @@ WHERE o.CustomerID IS NULL;
 
 Applying LEFT EXCLUDING JOIN to identify customers without orders.
 
-##  RIGHT EXCLUDING JOIN: Excluding to the Right
+## RIGHT EXCLUDING JOIN: Excluding to the Right
 
 ```sql
 -- Example of RIGHT EXCLUDING JOIN
@@ -111,7 +108,7 @@ WHERE c.CustomerID IS NULL;
 
 Implementing RIGHT EXCLUDING JOIN to identify orders without customers.
 
-##  OUTER EXCLUDING JOIN: Excluding in Unison
+## OUTER EXCLUDING JOIN: Excluding in Unison
 
 ```sql
 -- Example of OUTER EXCLUDING JOIN
@@ -123,7 +120,7 @@ WHERE c.CustomerID IS NULL OR o.CustomerID IS NULL;
 
 Integrating OUTER EXCLUDING JOIN to identify unmatched records from both tables.
 
-##  SELF JOIN: Connecting Within
+## SELF JOIN: Connecting Within
 
 ```sql
 -- Example of SELF JOIN
@@ -134,7 +131,7 @@ INNER JOIN Employee manager ON emp.ManagerID = manager.ID;
 
 Demonstrating the concept of SELF JOIN to connect records within the same table.
 
-##  CROSS JOIN: Expanding Horizons
+## CROSS JOIN: Expanding Horizons
 
 ```sql
 -- Example of CROSS JOIN
@@ -145,7 +142,7 @@ CROSS JOIN B;
 
 Expanding horizons with CROSS JOIN to combine each row from one table with each row from another.
 
-##  UNION: Merging Similarities
+## UNION: Merging Similarities
 
 ```sql
 -- Example of UNION
@@ -156,7 +153,7 @@ SELECT FromColumnTableB FROM B;
 
 Merging similarities with UNION to combine result-sets from two tables.
 
-##  UNION ALL: Embracing All
+## UNION ALL: Embracing All
 
 ```sql
 -- Example of UNION ALL

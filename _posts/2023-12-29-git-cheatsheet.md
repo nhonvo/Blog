@@ -17,11 +17,7 @@ lang: en
 tags:
 - git
 - cheatsheat
-
 ---
-
-# Git cheatsheat
-
 ## Git Basics
 
 ```bash

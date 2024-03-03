@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "dotnet command"
-subtitle:   "cheatsheet"
+title:      "dotnet command cheatsheat"
+subtitle:   ""
 date:       2023-12-29 12:00:00
 author:     "Truong Nhon"
 hidden: false
@@ -19,8 +19,6 @@ tags:
 - cheatsheat
 
 ---
-
-# NET Cheatsheet
 
 1. c# basic(datatype, exception, ...) -> *important*
 2. Algorithm (bubble sort, selected sort, ...) -> *quick view*
