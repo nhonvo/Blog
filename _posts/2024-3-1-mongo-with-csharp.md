@@ -529,7 +529,7 @@ To create a projection, we use the `ProjectionDefinitionBuilder`. We use the `Ex
 
 In the following code, we use a LINQ expression to create a new generic object with the fields we want. We keep the same names for the first three properties: `AccountId`, `AccountType`, and `Balance`. We create a new field called `GBP`, which is calculated by dividing the current `Balance` field by `1.3`.
 
-```csharp
+```c#
 var matchBalanceStage = Builders<Accounts>.Filter.Lt(user => user.Balance, 1500);
 var projectStage = Builders<Accounts>.Projection.Expression(u =>
     new
@@ -553,9 +553,21 @@ foreach (var account in results)
 }
 ```
 
+### Sample
+
+```c#
+IMongoDatabase db = dbClient.GetDatabase("postal_data");
+var zipEntries = db.GetCollection<ZipEntry>("zip_entries");
+var builder = Builders<ZipEntry>.Filter;
+var filter = builder.Eq(x => x.State, "AL") & builder.Gt(x => x.Population, 2000);
+var sort = Builders<ZipEntry>.Sort.Ascending(x => x.City);
+var projection = Builders<ZipEntry>.Projection.Include(x => x.City).Exclude(x => x.Zip);
+var results = zipEntries.Find(filter).Sort(sort).Project(projection).ToList();
+```
+
 ---
 
-## MongoDB Aggregation with C #
+## MongoDB Aggregation with C#
 
 In this unit, you learned how to:
 

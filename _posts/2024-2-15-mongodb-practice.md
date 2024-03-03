@@ -38,14 +38,12 @@ db.trips.find({"start station id": {$in: [302, 536]}})
 
 [Query Comparison Operators Reference](https://www.mongodb.com/docs/manual/reference/operator/query-comparison/)
 
-### Part 3: Projection and Query
+### Part 3: Projection and Embedded Documents
 
 ```javascript
 db.collection.find({query},{projection});
 db.trips.find({query}, {tripduration:1, bikeid:1, _id:0})
 ```
-
-### Part 4: Embedded Documents
 
 ```javascript
 {operator: [{condition1}, {condition2}...]}
@@ -59,15 +57,19 @@ db.inspections.find({$or: [{result: "No Violation Issued"}, {result: "Violation 
 
 [Logical Query Operators Reference](https://www.mongodb.com/docs/manual/reference/operator/query-logical/)
 
-### Part 5: Array Operators
+### Part 4: Embedded Documents
 
 ```javascript
 db.inspections.find({"address.zip": 11427})
 db.inspections.find({result: "Pass","address.zip": {$in:[11427]}}, {result: 1, date:1, address:1})
 db.inspections.updateMany({_id: ObjectId('56d61033a378eccde8a83569')}, {$set: {"address.phone": {: '84', number: '999988778'}}})
 Find 3 level of embedded documents
-db.inspections.find({"address.phone.": "84"});
+db.inspections.find({"address.phone.code": "84"});
+```
 
+### Part 5: Array Operators
+
+```javascript
 db.accounts.find({"products":['Brokerage','InvestmentStock']});
 $all
 db.accounts.find({"products":{$all:['Brokerage','InvestmentStock']}})
