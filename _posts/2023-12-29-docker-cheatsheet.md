@@ -79,7 +79,7 @@ docker system prune             # Remove all stopped containers, unused networks
 
 ## Dockerize Applications
 
-```
+```bash
 docker build -t <image_name> .         # Build a Docker image
 docker run -p <host_port>:<container_port> <image_name>   # Run a Docker container
 ```

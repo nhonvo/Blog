@@ -229,7 +229,6 @@ stakeholders?
 - [ ] A separate geographical location with multiple locations that are isolated from each other
 
 ---
-
 ## Answer
 
 - **Savings Plans 1.00 / 1**
