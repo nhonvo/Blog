@@ -20,53 +20,6 @@ start cmd /k "command_1 && command 2"
 start cmd /k "command_3"
 ```
 
-## docker config with database
-
-- **postgresql**
-
-- connect string
-
-```bash
-Host=localhost;Port=5432;Database=Reactivities;Username=truongnhon;Password=123;
-```
-
-- docker config
-
-```yaml
-postgres:
-  image: postgres
-  ports:
-    - 5432:5432
-  restart: always
-  environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=123
-    - POSTGRES_DB=VietConnect
-  volumes:
-    - ./pgdata:/var/lib/postgresql/data
-```
-
-- **sqlserver**
-
-- connect string
-
-```bash
-Server=sqlserver;Database=cleanarchitecture;User ID=SA;Password=MyPass@word;TrustServerCertificate=True
-```
-
-- docker config
-
-```yaml
-sqlserver:
-  image: mcr.microsoft.com/mssql/server:2019-latest
-  ports:
-    - "1433:1433"
-  environment:
-    MSSQL_SA_PASSWORD: "MyPass@word"
-    ACCEPT_EULA: "Y"
-    MSSQL_USER: "sa"
-```
-
 - Linux most use command - publish new webapi in linux basic comma
 
 ```bash
